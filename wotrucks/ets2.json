@@ -1,0 +1,47 @@
+{
+    "name": "ets2",
+    "display": "Euro Truck Simulator 2",
+    "type": "wotrucks",
+    "install": [
+      {
+        "appId": "1948160",
+        "type": "steamgamedl"
+      }
+    ],
+    "run": {
+      "stop": "exit",
+      "command": "bash $rootDir/bin/linux64/eurotrucks2_server -servercfg '${servercfg}' -server '${serverpkg}'",
+      "workingDirectory": "",
+      "pre": [],
+      "post": [],
+      "environmentVars": {}
+    },
+    "data": {
+      "servercfg": {
+        "type": "string",
+        "desc": "Server configuration file",
+        "display": "Server configuration file",
+        "required": true,
+        "value": "$rootDir/server_config.sii"
+      },
+      "serverpkg": {
+        "type": "string",
+        "desc": "Server packages file",
+        "display": "Server packages file",
+        "required": true,
+        "value": "$rootDir/server_packages.sii"
+      }
+    },
+    "environment": {
+      "type": "tty"
+    },
+    "supportedEnvironments": [
+      {
+        "type": "tty"
+      }
+    ],
+    "requirements": {
+      "os": "linux",
+      "arch": "amd64"
+    }
+  }
