@@ -1,0 +1,82 @@
+{
+    "name": "cod4",
+    "display": "Call of Duty 4",
+    "type": "cod",
+    "install": [
+      {
+        "files": "http://repo.soclan.ru/server/cod4-linux.tar.gz",
+        "type": "download"
+      },
+      {
+        "commands": [
+          "tar -xzf cod4-linux.tar.gz",
+          "rm cod4-linux.tar.gz"
+        ],
+        "type": "command"
+      }
+    ],
+    "run": {
+      "stop": "quit",
+      "command": "./cod4_lnxded +set dedicated 2 +sets gamestartup ${date} +set ui_maxclients ${maxplayers} +set net_ip ${ip} +set net_port ${port} +set sv_punkbuster ${pb} ${modname} +set loc_language 6 +exec ${config} +map_rotate",
+      "workingDirectory": "",
+      "pre": [],
+      "post": [],
+      "environmentVars": {}
+    },
+    "data": {
+      "config": {
+        "type": "string",
+        "desc": "Config file name",
+        "display": "Map",
+        "required": true,
+        "value": "server.cfg"
+      },
+      "ip": {
+        "type": "string",
+        "desc": "What IP to bind the server to",
+        "display": "IP",
+        "required": true,
+        "value": "0.0.0.0"
+      },
+      "maxplayers": {
+        "type": "integer",
+        "desc": "Max players allowed on server",
+        "display": "Max Players",
+        "required": true,
+        "value": "32"
+      },
+      "modname": {
+        "type": "string",
+        "desc": "write here mod name in needed i.e. +set fs_game mods/owsa",
+        "display": "Mod name",
+        "value": "",
+        "userEdit": true
+      },
+      "pb": {
+        "type": "byte",
+        "desc": "PunkBuster on or off",
+        "display": "PunkBuster",
+        "required": true,
+        "value": "1"
+      },
+      "port": {
+        "type": "integer",
+        "desc": "What port to bind the server to",
+        "display": "Port",
+        "required": true,
+        "value": "28960"
+      }
+    },
+    "environment": {
+      "type": "tty"
+    },
+    "supportedEnvironments": [
+      {
+        "type": "tty"
+      }
+    ],
+    "requirements": {
+      "os": "linux",
+      "arch": "amd64"
+    }
+  }

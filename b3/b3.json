@@ -1,0 +1,49 @@
+{
+    "name": "b3",
+    "display": "Big Brother Bot",
+    "type": "admin console",
+    "install": [
+      {
+        "commands": [
+          "git clone https://github.com/StarsAlliance/b3ex.git"
+        ],
+        "type": "command"
+      }
+    ],
+    "run": {
+      "stop": "quit( )",
+      "command": "python ${binary} -c ${config} ",
+      "workingDirectory": "",
+      "pre": [],
+      "post": [],
+      "environmentVars": {}
+    },
+    "data": {
+      "binary": {
+        "type": "string",
+        "desc": "Path to b3 binary",
+        "display": "Binary path",
+        "required": true,
+        "value": "b3_run.py"
+      },
+      "config": {
+        "type": "string",
+        "desc": "Path to config file",
+        "display": "Config Path",
+        "required": true,
+        "value": "config.xml"
+      }
+    },
+    "environment": {
+      "type": "tty"
+    },
+    "supportedEnvironments": [
+      {
+        "type": "tty"
+      }
+    ],
+    "requirements": {
+      "os": "linux",
+      "arch": "amd64"
+    }
+  }

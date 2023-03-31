@@ -1,0 +1,47 @@
+{
+    "name": "ats2",
+    "display": "American Truck Simulator 2",
+    "type": "wotrucks",
+    "install": [
+      {
+        "appId": "2239530",
+        "type": "steamgamedl"
+      }
+    ],
+    "run": {
+      "stop": "exit",
+      "command": "./amtrucks_server",
+      "workingDirectory": "bin/linux64",
+      "pre": [],
+      "post": [],
+      "environmentVars": {}
+    },
+    "data": {
+      "clientport": {
+        "type": "integer",
+        "desc": "What port to bind the clientport to",
+        "display": "Client Port",
+        "required": true,
+        "value": "20000"
+      },
+      "ip": {
+        "type": "string",
+        "desc": "What IP to bind the server to",
+        "display": "IP",
+        "required": true,
+        "value": "0.0.0.0"
+      }
+    },
+    "environment": {
+      "type": "tty"
+    },
+    "supportedEnvironments": [
+      {
+        "type": "tty"
+      }
+    ],
+    "requirements": {
+      "os": "linux",
+      "arch": "amd64"
+    }
+  }
